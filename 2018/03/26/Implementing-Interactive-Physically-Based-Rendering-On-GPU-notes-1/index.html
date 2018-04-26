@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Let&#39;s get started | Xin Song</title>
+  <title>Implementing Interactive Physically Based Rendering On GPU notes(1) | Xin Song</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -226,25 +226,45 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-03-01T07:10:43.000Z" itemprop="datePublished">
-          2018-03-01
+      <time datetime="2018-03-27T02:23:07.000Z" itemprop="datePublished">
+          2018-03-26
       </time>
     
+    
+    | 
+    <a href='/tags/CUDA/'>CUDA</a>,
+    
+    <a href='/tags/Physically-based-rendering/'>Physically based rendering</a>
+    
+    
 </span>
-                <h1>Let's get started</h1>
+                <h1>Implementing Interactive Physically Based Rendering On GPU notes(1)</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Let’s-get-started"><a href="#Let’s-get-started" class="headerlink" title="Let’s get started"></a>Let’s get started</h1>
+      		<ol>
+<li>Machine Epsilon<br>Machine Epsilon is the smallest number of EPS(epsilon) such that 1 + EPS not equal to 1. Machine Epsilon is a machine-dependent floating point value that provides an upper bound on relative error due to rounding in floating point arithmetic. In C++, similar macros are available in the standard header. The preferred way in C++ is to use std::numeric_limits::epsilon( ) – specified in the standard header.</li>
+<li><p>usage of <strong>CUDA_ARCH</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">__device__ __<span class="function">host__ <span class="keyword">float</span> <span class="title">function</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __CUDA_ARCH__</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">10.0f</span> * __sinf(x);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">10.0f</span> * <span class="built_in">sin</span>(x);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://gcc.gnu.org/onlinedocs/gcc/Diagnostic-Pragmas.html" target="_blank" rel="noopener">Diagnostic Pragmas</a></p>
+</li>
+<li></li>
+</ol>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/03/10/C-template/" style="float: left;">
-        ← C++ template
+    <a class="pull-left" href="/2018/04/12/RNN/" style="float: left;">
+        ← RNN
     </a>
     
+    
+    <a class="pull-right" href="/2018/03/23/Update-CUDA-toolkit/">
+        Update CUDA toolkit →
+    </a>
     
 </nav>
 

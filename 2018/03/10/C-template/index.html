@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Let&#39;s get started | Xin Song</title>
+  <title>C++ template | Xin Song</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -226,25 +226,72 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-03-01T07:10:43.000Z" itemprop="datePublished">
-          2018-03-01
+      <time datetime="2018-03-10T18:45:32.000Z" itemprop="datePublished">
+          2018-03-10
       </time>
     
+    
+    | 
+    <a href='/tags/C/'>C++</a>
+    
+    
 </span>
-                <h1>Let's get started</h1>
+                <h1>C++ template</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Let’s-get-started"><a href="#Let’s-get-started" class="headerlink" title="Let’s get started"></a>Let’s get started</h1>
+      		<h2 id="Templates"><a href="#Templates" class="headerlink" title="Templates?"></a>Templates?</h2><h3 id="What-is-templates"><a href="#What-is-templates" class="headerlink" title="What is templates?"></a>What is templates?</h3><blockquote>
+<p>Templates are the fundation for generic programming in C++. A template is a blueprint or formula for creating classes or functions. </p>
+</blockquote>
+<h3 id="Why-we-need-templates"><a href="#Why-we-need-templates" class="headerlink" title="Why we need templates?"></a>Why we need templates?</h3><p>Sometimes we need to write different version of the same function or classfor different types, which will make our code fat. Thus we need templates help us solving this. </p>
+<h3 id="How-templates-work"><a href="#How-templates-work" class="headerlink" title="How templates work?"></a>How templates work?</h3><p>Relys on type parameterization, compiler would bind, either implicitly or explicitly, template argument(s) to the template parameter(s) to generate specific function or class.</p>
+<h2 id="Function-templates"><a href="#Function-templates" class="headerlink" title="Function templates"></a>Function templates</h2><p>A function template represents a group of functions which have the same functionality. We also can treat a function template as a formula which could be used to generate type-specific version of that function and this will be done by the compiler. </p>
+<blockquote>
+<p>When the compiler sees the definition of a template, it does not generate code. It genreates code only when we instantiate a specific instance of the template.</p>
+</blockquote>
+<p>Thus when we using a template, we need to know the definition of the template, which means when compiler need to instantiate a template, it must can see the code that defines a function template or class template member function. This is different to ordinary function. </p>
+<blockquote>
+<p>Ordinarily, when we call a function, the compiler needs to see only a declaration for the function. Similarity, when we use objects of class type, the class definition must be available, but the definitions of the member functions need not be present. As a result, we put class defintions and function declarations in header files adn definitions of ordinary and class-member functions in source files. </p>
+</blockquote>
+<p><strong>Thus, definitions of function templates and member functions of class templates are ordinarily put into header files.</strong></p>
+<h3 id="Usage-of-a-function-template"><a href="#Usage-of-a-function-template" class="headerlink" title="Usage of a function template"></a>Usage of a function template</h3><h4 id="1-The-Definition-Of-a-Function-Template"><a href="#1-The-Definition-Of-a-Function-Template" class="headerlink" title="1. The Definition Of a Function Template"></a>1. The Definition Of a Function Template</h4><p>It should looks like:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="keyword">const</span>&amp; <span class="title">max</span><span class="params">(T <span class="keyword">const</span>&amp; x, T <span class="keyword">const</span>&amp; y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt; y ? x : y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>A template definition starts with the keyword <em>template</em> followed by a <strong>template parameter list</strong>, which is a comma-separated list of one or more <strong>template parameters</strong> bracketed by the less-than(&lt;) and greater-than(&gt;) tokens. In a template definition, the template parameter list cannot be empty. </p>
+</blockquote>
+<p><strong>Template parameter list</strong> can take <strong>type parameter</strong> and <strong>nontype parameter</strong>. </p>
+<ol>
+<li><strong>type parameter</strong><br> A type parameter can be used to name the return type or a function parameter type, and for variable declarations or casts inside the function body. Each type parameter must be preceded by the keyword <em>class</em> or <em>typename</em>.  </li>
+<li><p><strong>nontype parameter</strong><br> A nontype parameter represents a value rather than a type. Nontype parameters are specified by using a specific type name instead of the <em>class</em> or <em>typename</em> keyword. </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">unsigned</span> N, <span class="keyword">unsigned</span> M&gt;</span><br><span class="line">int compare(const char (&amp;p1)[N], const char (&amp;p2)[M])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">strcmp</span>(p1, p2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>A nontype parameter may be integral type, or a pointer or (lvalue)reference to an object or to a function type. An argument bound to a nontype integral parameter must be a constant expression. Arguments bound to a pointer or reference nontype parameter must have static lifetime. </p>
+</blockquote>
+<h4 id="2-Instantiating-a-Function-Template"><a href="#2-Instantiating-a-Function-Template" class="headerlink" title="2. Instantiating a Function Template"></a>2. Instantiating a Function Template</h4><p>There are two ways to instantiate a function template, and the type used to instantiate the template must satisfy the operation of that type inside the definition of that function template:</p>
+<ol>
+<li>Explicit way:</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; max&lt;<span class="keyword">int</span>&gt;(<span class="number">123</span>, <span class="number">234</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Implicit way</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; max(<span class="number">234</span>,<span class="number">567</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Class-templates"><a href="#Class-templates" class="headerlink" title="Class templates"></a>Class templates</h2>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2018/03/10/C-template/" style="float: left;">
-        ← C++ template
+    <a class="pull-left" href="/2018/03/10/Decision-Tree/" style="float: left;">
+        ← Decision Tree
     </a>
     
+    
+    <a class="pull-right" href="/2018/03/01/Let-s-get-started/">
+        Let's get started →
+    </a>
     
 </nav>
 

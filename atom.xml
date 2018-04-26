@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gorillasx.github.io/"/>
-  <updated>2018-03-01T07:11:27.106Z</updated>
+  <updated>2018-04-26T21:51:51.102Z</updated>
   <id>https://gorillasx.github.io/</id>
   
   <author>
@@ -15,6 +15,190 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Algorithm collections</title>
+    <link href="https://gorillasx.github.io/2018/04/26/Algorithm-collections/"/>
+    <id>https://gorillasx.github.io/2018/04/26/Algorithm-collections/</id>
+    <published>2018-04-26T21:13:49.000Z</published>
+    <updated>2018-04-26T21:51:51.102Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-Boyer-Moore-Algorithm"><a href="#1-Boyer-Moore-Algorithm" class="headerlink" title="1. Boyer-Moore Algorithm"></a>1. <a href="https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html" target="_blank" rel="noopener">Boyer-Moore Algorithm</a></h3><p><strong>Description:</strong><br>Find the majority element in a list of values. This algorithm could be done in parallel.<br>Time complexity: O(n)<br>Spcae complexity: O(1)<br><em>How it works:</em><br>It required exactly 2 passes over the input list. </p><ol><li><p>In the first pass, we need to record a <em>candidate</em>, and the <em>count</em> of the <em>candicate</em>. At begining, <em>count</em> equal to 0, <em>candidate</em> could be any value.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">candidate = <span class="number">0</span></span><br><span class="line">count = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> input:</span><br><span class="line">    <span class="keyword">if</span> count == <span class="number">0</span>:</span><br><span class="line">        candidate = value</span><br><span class="line">    <span class="keyword">if</span> candidate == value:</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        count -= <span class="number">1</span></span><br></pre></td></tr></table></figure></li><li><p>Check whether this candidate is the majority element.</p></li></ol><p><strong>Explanation:</strong><br>At each point, where count == 0, means before that there are no elements exist or each element could find an another value to pair, to neutralize it. Thus, candidates before cannot be the majority element. But it also cannot guarantee the candidate we will get  at the end of traversal will me the majorith element, which is the reason we need a second pass. </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-Boyer-Moore-Algorithm&quot;&gt;&lt;a href=&quot;#1-Boyer-Moore-Algorithm&quot; class=&quot;headerlink&quot; title=&quot;1. Boyer-Moore Algorithm&quot;&gt;&lt;/a&gt;1. &lt;a href=&quot;http
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://gorillasx.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="https://gorillasx.github.io/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RNN</title>
+    <link href="https://gorillasx.github.io/2018/04/12/RNN/"/>
+    <id>https://gorillasx.github.io/2018/04/12/RNN/</id>
+    <published>2018-04-13T00:41:38.000Z</published>
+    <updated>2018-04-13T20:26:36.461Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Examples-of-RNN-architectures"><a href="#Examples-of-RNN-architectures" class="headerlink" title="Examples of RNN architectures"></a>Examples of RNN architectures</h3><h4 id="Many-to-Many-architecture"><a href="#Many-to-Many-architecture" class="headerlink" title="Many-to-Many architecture"></a>Many-to-Many architecture</h4><ol><li>Input length == Output length</li><li>Input length != Output length<h4 id="Many-to-One-architecture"><a href="#Many-to-One-architecture" class="headerlink" title="Many-to-One architecture"></a>Many-to-One architecture</h4>sentiment classification</li></ol><h4 id="One-to-Many-architecture"><a href="#One-to-Many-architecture" class="headerlink" title="One-to-Many architecture"></a>One-to-Many architecture</h4><p>Music generation</p><h3 id="Language-model-and-sequence-generation"><a href="#Language-model-and-sequence-generation" class="headerlink" title="Language model and sequence generation"></a>Language model and sequence generation</h3><h4 id="What-is-language-modelling"><a href="#What-is-language-modelling" class="headerlink" title="What is language modelling?"></a>What is language modelling?</h4><h4 id="language-modelling-with-an-RNN"><a href="#language-modelling-with-an-RNN" class="headerlink" title="language modelling with an RNN"></a>language modelling with an RNN</h4><p>Training set: large corpus of english text<br>Tokenize the sentences </p><h3 id="Vanishing-Gradient-problem"><a href="#Vanishing-Gradient-problem" class="headerlink" title="Vanishing Gradient problem"></a>Vanishing Gradient problem</h3><h3 id="Gated-Recurrent-Unit"><a href="#Gated-Recurrent-Unit" class="headerlink" title="Gated Recurrent Unit"></a>Gated Recurrent Unit</h3><p>It allows you to learn very long range connections in a sequecnce.</p><h3 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h3><h3 id="Bidirectional-RNN"><a href="#Bidirectional-RNN" class="headerlink" title="Bidirectional RNN"></a>Bidirectional RNN</h3><h3 id="Deep-RNNs"><a href="#Deep-RNNs" class="headerlink" title="Deep RNNs"></a>Deep RNNs</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Examples-of-RNN-architectures&quot;&gt;&lt;a href=&quot;#Examples-of-RNN-architectures&quot; class=&quot;headerlink&quot; title=&quot;Examples of RNN architectures&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+      <category term="Deep Learning" scheme="https://gorillasx.github.io/categories/Deep-Learning/"/>
+    
+      <category term="RNN" scheme="https://gorillasx.github.io/categories/Deep-Learning/RNN/"/>
+    
+    
+      <category term="RNN" scheme="https://gorillasx.github.io/tags/RNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Implementing Interactive Physically Based Rendering On GPU notes(1)</title>
+    <link href="https://gorillasx.github.io/2018/03/26/Implementing-Interactive-Physically-Based-Rendering-On-GPU-notes-1/"/>
+    <id>https://gorillasx.github.io/2018/03/26/Implementing-Interactive-Physically-Based-Rendering-On-GPU-notes-1/</id>
+    <published>2018-03-27T02:23:07.000Z</published>
+    <updated>2018-03-28T04:18:02.666Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>Machine Epsilon<br>Machine Epsilon is the smallest number of EPS(epsilon) such that 1 + EPS not equal to 1. Machine Epsilon is a machine-dependent floating point value that provides an upper bound on relative error due to rounding in floating point arithmetic. In C++, similar macros are available in the standard header. The preferred way in C++ is to use std::numeric_limits::epsilon( ) – specified in the standard header.</li><li><p>usage of <strong>CUDA_ARCH</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">__device__ __<span class="function">host__ <span class="keyword">float</span> <span class="title">function</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __CUDA_ARCH__</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">10.0f</span> * __sinf(x);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">10.0f</span> * <span class="built_in">sin</span>(x);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p><a href="https://gcc.gnu.org/onlinedocs/gcc/Diagnostic-Pragmas.html" target="_blank" rel="noopener">Diagnostic Pragmas</a></p></li><li></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;Machine Epsilon&lt;br&gt;Machine Epsilon is the smallest number of EPS(epsilon) such that 1 + EPS not equal to 1. Machine Epsilon is a ma
+      
+    
+    </summary>
+    
+      <category term="Notes" scheme="https://gorillasx.github.io/categories/Notes/"/>
+    
+    
+      <category term="CUDA" scheme="https://gorillasx.github.io/tags/CUDA/"/>
+    
+      <category term="Physically based rendering" scheme="https://gorillasx.github.io/tags/Physically-based-rendering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Update CUDA toolkit</title>
+    <link href="https://gorillasx.github.io/2018/03/23/Update-CUDA-toolkit/"/>
+    <id>https://gorillasx.github.io/2018/03/23/Update-CUDA-toolkit/</id>
+    <published>2018-03-24T03:27:39.000Z</published>
+    <updated>2018-04-21T16:02:36.406Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>Update Nvidia GPU Driver</p><ol><li>Log into your account in the TTY</li><li><p>Run </p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge nvidia-*</span><br></pre></td></tr></table></figure></li><li><p>Run </p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa</span><br></pre></td></tr></table></figure><p> and then</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></li><li><p>sudo apt-get install nvidia-390</p></li><li>Reboot</li></ol></li><li><p>Remove old CUDA toolkit</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge cuda</span><br></pre></td></tr></table></figure></li><li><p>Install new CUDA toolkit</p><ol><li><p>Install repository meta-data</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dpkg -i cuda-repo-&lt;distro&gt;_&lt;version&gt;_&lt;architecture&gt;.deb</span><br></pre></td></tr></table></figure></li><li><p>Installing the CUDA public GPG key<br>When installing using the local repo:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key add /var/cuda-repo-&lt;version&gt;/7fa2af80.pub</span><br></pre></td></tr></table></figure><p>When installing using network repo:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/&lt;distro&gt;/&lt;architecture&gt;/7fa2af80.pub</span><br></pre></td></tr></table></figure></li><li><p>Update the Apt repository cache</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure></li><li><p>Install CUDA</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install cuda</span><br></pre></td></tr></table></figure></li><li><p>Environment Setup</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ export PATH=/usr/local/cuda-9.1/bin$&#123;PATH:+:$&#123;PATH&#125;&#125;</span><br><span class="line">$ export LD_LIBRARY_PATH=/usr/local/cuda-9.1/lib64$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;</span><br></pre></td></tr></table></figure></li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Update Nvidia GPU Driver&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Log into your account in the TTY&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Run &lt;/p&gt;
+ &lt;figure class=&quot;highlight bash&quot;&gt;&lt;tab
+      
+    
+    </summary>
+    
+      <category term="CUDA" scheme="https://gorillasx.github.io/categories/CUDA/"/>
+    
+    
+      <category term="CUDA" scheme="https://gorillasx.github.io/tags/CUDA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ virtual function table</title>
+    <link href="https://gorillasx.github.io/2018/03/15/C-virtual-function-table/"/>
+    <id>https://gorillasx.github.io/2018/03/15/C-virtual-function-table/</id>
+    <published>2018-03-16T02:55:55.000Z</published>
+    <updated>2018-03-16T04:13:43.943Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="There-is-a-code-example-could-be-used-to-understand-how-C-virtual-function-table-existed-and-how-it-works-This-is-very-important-for-understanding-C-polymorphism"><a href="#There-is-a-code-example-could-be-used-to-understand-how-C-virtual-function-table-existed-and-how-it-works-This-is-very-important-for-understanding-C-polymorphism" class="headerlink" title="There is a code example could be used to understand how C++ virtual function table existed and how it works. This is very important for understanding C++ polymorphism."></a>There is a code example could be used to understand how C++ virtual function table existed and how it works. This is very important for understanding C++ polymorphism.</h4><pre><code>**If there was a virtual function inside a class definition, then for each instance of this class, the first 8 bytes(64bits system) or 4 bytes(32bits system) is a pointer points to virtual function table. Virtual function table, in fact, is an arrar of function pointer, each function pointer points to a virtual function inorder as they declared. This virtual function table will be inherited by each derived class. If there are no virtual function override, then the virtual function table of derived class should be a copy of virtual function table of base class with same content. Otherwise, the virtual function table of derived class should be changed: the pointer points to the virtual function of base class should be replaced to the pointer points to virtual function of derived class**</code></pre><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">Parent(<span class="keyword">int</span> x=<span class="number">8</span>):x(x)&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Parent fun()"</span> &lt;&lt; <span class="built_in">endl</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;<span class="built_in">cout</span> &lt;&lt; <span class="string">"show()"</span> &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span>:</span><span class="keyword">public</span> Parent</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> y;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">Child(<span class="keyword">int</span> y= <span class="number">9</span>):y(y)&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;<span class="built_in">cout</span> &lt;&lt; <span class="string">"Child fun()"</span> &lt;&lt; <span class="built_in">endl</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*func)</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function">Parent <span class="title">p</span><span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line">Child  c;</span><br><span class="line">    func** fa = <span class="keyword">reinterpret_cast</span>&lt;func**&gt;(&amp;p);</span><br><span class="line">    (*fa)[<span class="number">0</span>]();</span><br><span class="line">    (*fa)[<span class="number">1</span>]();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"father fun address: "</span> &lt;&lt; <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;((*fa)[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"father show address: "</span> &lt;&lt; <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;((*fa)[<span class="number">1</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    func** fc = <span class="keyword">reinterpret_cast</span>&lt;func**&gt;(&amp;c);</span><br><span class="line">    (*fc)[<span class="number">0</span>]();</span><br><span class="line">    (*fc)[<span class="number">1</span>]();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Children fun address: "</span> &lt;&lt; <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;((*fc)[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Children show address: "</span> &lt;&lt; <span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>&gt;((*fc)[<span class="number">1</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">     </span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;There-is-a-code-example-could-be-used-to-understand-how-C-virtual-function-table-existed-and-how-it-works-This-is-very-important-for
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://gorillasx.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://gorillasx.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Decision Tree</title>
+    <link href="https://gorillasx.github.io/2018/03/10/Decision-Tree/"/>
+    <id>https://gorillasx.github.io/2018/03/10/Decision-Tree/</id>
+    <published>2018-03-11T01:18:56.000Z</published>
+    <updated>2018-03-11T01:20:37.849Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="AI" scheme="https://gorillasx.github.io/categories/AI/"/>
+    
+      <category term="Machine Learning" scheme="https://gorillasx.github.io/categories/AI/Machine-Learning/"/>
+    
+      <category term="classification" scheme="https://gorillasx.github.io/categories/AI/Machine-Learning/classification/"/>
+    
+    
+      <category term="Machine Learning" scheme="https://gorillasx.github.io/tags/Machine-Learning/"/>
+    
+      <category term="classification" scheme="https://gorillasx.github.io/tags/classification/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ template</title>
+    <link href="https://gorillasx.github.io/2018/03/10/C-template/"/>
+    <id>https://gorillasx.github.io/2018/03/10/C-template/</id>
+    <published>2018-03-10T18:45:32.000Z</published>
+    <updated>2018-03-11T00:15:53.537Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Templates"><a href="#Templates" class="headerlink" title="Templates?"></a>Templates?</h2><h3 id="What-is-templates"><a href="#What-is-templates" class="headerlink" title="What is templates?"></a>What is templates?</h3><blockquote><p>Templates are the fundation for generic programming in C++. A template is a blueprint or formula for creating classes or functions. </p></blockquote><h3 id="Why-we-need-templates"><a href="#Why-we-need-templates" class="headerlink" title="Why we need templates?"></a>Why we need templates?</h3><p>Sometimes we need to write different version of the same function or classfor different types, which will make our code fat. Thus we need templates help us solving this. </p><h3 id="How-templates-work"><a href="#How-templates-work" class="headerlink" title="How templates work?"></a>How templates work?</h3><p>Relys on type parameterization, compiler would bind, either implicitly or explicitly, template argument(s) to the template parameter(s) to generate specific function or class.</p><h2 id="Function-templates"><a href="#Function-templates" class="headerlink" title="Function templates"></a>Function templates</h2><p>A function template represents a group of functions which have the same functionality. We also can treat a function template as a formula which could be used to generate type-specific version of that function and this will be done by the compiler. </p><blockquote><p>When the compiler sees the definition of a template, it does not generate code. It genreates code only when we instantiate a specific instance of the template.</p></blockquote><p>Thus when we using a template, we need to know the definition of the template, which means when compiler need to instantiate a template, it must can see the code that defines a function template or class template member function. This is different to ordinary function. </p><blockquote><p>Ordinarily, when we call a function, the compiler needs to see only a declaration for the function. Similarity, when we use objects of class type, the class definition must be available, but the definitions of the member functions need not be present. As a result, we put class defintions and function declarations in header files adn definitions of ordinary and class-member functions in source files. </p></blockquote><p><strong>Thus, definitions of function templates and member functions of class templates are ordinarily put into header files.</strong></p><h3 id="Usage-of-a-function-template"><a href="#Usage-of-a-function-template" class="headerlink" title="Usage of a function template"></a>Usage of a function template</h3><h4 id="1-The-Definition-Of-a-Function-Template"><a href="#1-The-Definition-Of-a-Function-Template" class="headerlink" title="1. The Definition Of a Function Template"></a>1. The Definition Of a Function Template</h4><p>It should looks like:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="keyword">const</span>&amp; <span class="title">max</span><span class="params">(T <span class="keyword">const</span>&amp; x, T <span class="keyword">const</span>&amp; y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt; y ? x : y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>A template definition starts with the keyword <em>template</em> followed by a <strong>template parameter list</strong>, which is a comma-separated list of one or more <strong>template parameters</strong> bracketed by the less-than(&lt;) and greater-than(&gt;) tokens. In a template definition, the template parameter list cannot be empty. </p></blockquote><p><strong>Template parameter list</strong> can take <strong>type parameter</strong> and <strong>nontype parameter</strong>. </p><ol><li><strong>type parameter</strong><br> A type parameter can be used to name the return type or a function parameter type, and for variable declarations or casts inside the function body. Each type parameter must be preceded by the keyword <em>class</em> or <em>typename</em>.  </li><li><p><strong>nontype parameter</strong><br> A nontype parameter represents a value rather than a type. Nontype parameters are specified by using a specific type name instead of the <em>class</em> or <em>typename</em> keyword. </p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">unsigned</span> N, <span class="keyword">unsigned</span> M&gt;</span><br><span class="line">int compare(const char (&amp;p1)[N], const char (&amp;p2)[M])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">strcmp</span>(p1, p2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>A nontype parameter may be integral type, or a pointer or (lvalue)reference to an object or to a function type. An argument bound to a nontype integral parameter must be a constant expression. Arguments bound to a pointer or reference nontype parameter must have static lifetime. </p></blockquote><h4 id="2-Instantiating-a-Function-Template"><a href="#2-Instantiating-a-Function-Template" class="headerlink" title="2. Instantiating a Function Template"></a>2. Instantiating a Function Template</h4><p>There are two ways to instantiate a function template, and the type used to instantiate the template must satisfy the operation of that type inside the definition of that function template:</p><ol><li>Explicit way:</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; max&lt;<span class="keyword">int</span>&gt;(<span class="number">123</span>, <span class="number">234</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure><ol><li>Implicit way</li></ol><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; max(<span class="number">234</span>,<span class="number">567</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure><h2 id="Class-templates"><a href="#Class-templates" class="headerlink" title="Class templates"></a>Class templates</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Templates&quot;&gt;&lt;a href=&quot;#Templates&quot; class=&quot;headerlink&quot; title=&quot;Templates?&quot;&gt;&lt;/a&gt;Templates?&lt;/h2&gt;&lt;h3 id=&quot;What-is-templates&quot;&gt;&lt;a href=&quot;#What-i
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://gorillasx.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://gorillasx.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Let&#39;s get started</title>
